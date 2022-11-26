@@ -1,117 +1,32 @@
-USE [master]
-GO
-/****** Object:  Database [SampleDB]    Script Date: 11/25/2022 11:14:23 PM ******/
-CREATE DATABASE [SampleDB]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'SampleDB', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\SampleDB.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'SampleDB_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\SampleDB_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
- WITH CATALOG_COLLATION = DATABASE_DEFAULT
-GO
-ALTER DATABASE [SampleDB] SET COMPATIBILITY_LEVEL = 150
-GO
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [SampleDB].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
-ALTER DATABASE [SampleDB] SET ANSI_NULL_DEFAULT OFF 
-GO
-ALTER DATABASE [SampleDB] SET ANSI_NULLS OFF 
-GO
-ALTER DATABASE [SampleDB] SET ANSI_PADDING OFF 
-GO
-ALTER DATABASE [SampleDB] SET ANSI_WARNINGS OFF 
-GO
-ALTER DATABASE [SampleDB] SET ARITHABORT OFF 
-GO
-ALTER DATABASE [SampleDB] SET AUTO_CLOSE OFF 
-GO
-ALTER DATABASE [SampleDB] SET AUTO_SHRINK OFF 
-GO
-ALTER DATABASE [SampleDB] SET AUTO_UPDATE_STATISTICS ON 
-GO
-ALTER DATABASE [SampleDB] SET CURSOR_CLOSE_ON_COMMIT OFF 
-GO
-ALTER DATABASE [SampleDB] SET CURSOR_DEFAULT  GLOBAL 
-GO
-ALTER DATABASE [SampleDB] SET CONCAT_NULL_YIELDS_NULL OFF 
-GO
-ALTER DATABASE [SampleDB] SET NUMERIC_ROUNDABORT OFF 
-GO
-ALTER DATABASE [SampleDB] SET QUOTED_IDENTIFIER OFF 
-GO
-ALTER DATABASE [SampleDB] SET RECURSIVE_TRIGGERS OFF 
-GO
-ALTER DATABASE [SampleDB] SET  ENABLE_BROKER 
-GO
-ALTER DATABASE [SampleDB] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
-GO
-ALTER DATABASE [SampleDB] SET DATE_CORRELATION_OPTIMIZATION OFF 
-GO
-ALTER DATABASE [SampleDB] SET TRUSTWORTHY OFF 
-GO
-ALTER DATABASE [SampleDB] SET ALLOW_SNAPSHOT_ISOLATION OFF 
-GO
-ALTER DATABASE [SampleDB] SET PARAMETERIZATION SIMPLE 
-GO
-ALTER DATABASE [SampleDB] SET READ_COMMITTED_SNAPSHOT ON 
-GO
-ALTER DATABASE [SampleDB] SET HONOR_BROKER_PRIORITY OFF 
-GO
-ALTER DATABASE [SampleDB] SET RECOVERY FULL 
-GO
-ALTER DATABASE [SampleDB] SET  MULTI_USER 
-GO
-ALTER DATABASE [SampleDB] SET PAGE_VERIFY CHECKSUM  
-GO
-ALTER DATABASE [SampleDB] SET DB_CHAINING OFF 
-GO
-ALTER DATABASE [SampleDB] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
-GO
-ALTER DATABASE [SampleDB] SET TARGET_RECOVERY_TIME = 60 SECONDS 
-GO
-ALTER DATABASE [SampleDB] SET DELAYED_DURABILITY = DISABLED 
-GO
-EXEC sys.sp_db_vardecimal_storage_format N'SampleDB', N'ON'
-GO
-ALTER DATABASE [SampleDB] SET QUERY_STORE = OFF
-GO
 USE [SampleDB]
 GO
-/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 11/25/2022 11:14:24 PM ******/
-SET ANSI_NULLS ON
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'25e34335-84e9-4d34-a62b-22ac7bc7448f', N'Nokia N95', 1, 100000, 1)
 GO
-SET QUOTED_IDENTIFIER ON
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'99eaa4ae-df4c-47fd-9c16-285d5d0f8cfe', N'Sony Z21', 0, 1000000, 1)
 GO
-CREATE TABLE [dbo].[__EFMigrationsHistory](
-	[MigrationId] [nvarchar](150) NOT NULL,
-	[ProductVersion] [nvarchar](32) NOT NULL,
- CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY CLUSTERED 
-(
-	[MigrationId] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY]
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'24d692cf-f44c-406a-b5e5-2bb61a391430', N'Xiaomi G750', 1, 4030000, 3)
 GO
-/****** Object:  Table [dbo].[Products]    Script Date: 11/25/2022 11:14:24 PM ******/
-SET ANSI_NULLS ON
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'60c241a3-dec3-4a02-becf-3107b6f8e1fc', N'Huawei', 1, 650000, 1)
 GO
-SET QUOTED_IDENTIFIER ON
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'f1fee4e8-01e2-4100-8002-49f2c3c06908', N'Lenovo Z510', 0, 1200000, 0)
 GO
-CREATE TABLE [dbo].[Products](
-	[Id] [uniqueidentifier] NOT NULL,
-	[Title] [nvarchar](max) NULL,
-	[Type] [int] NOT NULL,
-	[Price] [float] NOT NULL,
-	[Color] [int] NOT NULL,
- CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'8a857767-26a4-45e0-bd63-5c987e3b8d77', N'HTC J500', 1, 256300, 3)
 GO
-USE [master]
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'2b3a647c-9bcd-403d-85b7-87d769f16916', N'Samsung 6', 2, 15000000, 5)
 GO
-ALTER DATABASE [SampleDB] SET  READ_WRITE 
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'de242415-86c5-4553-8fef-8df6b4f3901e', N'IPhone 14', 1, 3690000, 0)
+GO
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'3c9a03ac-4e9c-434d-90c9-8f3b106cad10', N'Del F450', 0, 1254000, 2)
+GO
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'813b8b79-4331-4c47-b8bf-92444851ebc8', N'IPhone 14', 1, 4000000, 4)
+GO
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'0b11f1cc-0cd0-4a68-8044-a8b4c118ff98', N'MCI L087', 0, 1200082, 1)
+GO
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'48ad8427-3307-49c3-8cb8-b013177e51bc', N'Apple 5', 2, 50000000, 1)
+GO
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'adb2af10-732d-4826-9014-e2447479433e', N'HP k75', 0, 1100000, 5)
+GO
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'e53d91b3-9834-48ae-a2c7-f18508f4a9f8', N'ASUS P58', 0, 2503000, 1)
+GO
+INSERT [dbo].[Products] ([Id], [Title], [Type], [Price], [Color]) VALUES (N'5d8a096e-0f74-4c2c-a01d-f6eaa77ec572', N'Samsung S21', 1, 2500000, 3)
 GO
